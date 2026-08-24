@@ -1,108 +1,156 @@
-
-import { Canvas, useThree } from "@react-three/fiber"
-import { BoxGeometry } from "three"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import * as THREE from 'three'
-
-
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
 
 import './app.scss'
-import { OrbitControls } from "@react-three/drei"
 
-import { Building } from "./experience/model/Building.jsx"
-import Experience from "./experience/Experience.jsx"
-import Navbar from "./components/layout/navbar/Navbar.jsx"
-
+import Experience from './experience/Experience.jsx'
 import FloorInfoModal from './experience/model/modal/FloorInfoModal.jsx'
-import Areas from "./components/sections/areas/Areas.jsx"
-import HeroTexts from "./components/sections/hero-texts/HeroTexts.jsx"
-import Location from "./components/sections/location/Location.jsx"
-import Footer from "./components/layout/footer/Footer.jsx"
+import RoofInfoModal from './experience/model/modal-roof/RoofInfoModal.jsx'
 
-import { useBreakpoint } from "./components/hooks/useBreakpoint.js"
-import RoofInfoModal from "./experience/model/modal-roof/RoofInfoModal.jsx"
+import Navbar from './components/layout/navbar/Navbar.jsx'
+import Footer from './components/layout/footer/Footer.jsx'
+
+import HeroTexts from './components/sections/hero-texts/HeroTexts.jsx'
+import Areas from './components/sections/areas/Areas.jsx'
+import Location from './components/sections/location/Location.jsx'
+
+import { useBreakpoint } from './components/hooks/useBreakpoint.js'
+
 
 function App() {
 
-  const [selectedFloor, setSelectedFloor] = useState(null)
+  // -------------------------
+  // State
+  // -------------------------
 
+  const [selectedFloor, setSelectedFloor] = useState(null)
   const [selectedRoof, setSelectedRoof] = useState(null)
 
+  // Apaga el icono de 360 cuando el usuario interactúa
   const [hasInteracted, setHasInteracted] = useState(false)
- 
-  // console.log(selectedRoof)
-  console.log(selectedFloor)
 
+
+  // -------------------------
+  // Modal
+  // -------------------------
+
+  const isModalOpen =
+    selectedFloor !== null ||
+    selectedRoof !== null
+
+
+  // Bloquea el scroll de la página cuando hay un modal abierto
+  useEffect(() => {
+
+    document.body.style.overflow = isModalOpen
+      ? 'hidden'
+      : ''
+
+    return () => {
+      document.body.style.overflow = ''
+    }
+
+  }, [isModalOpen])
+
+
+  // -------------------------
+  // Responsive
+  // -------------------------
 
   const { isDesktop } = useBreakpoint()
-  
+
 
   return (
     <>
+      <Navbar />
 
-    <Navbar />
-
-    <HeroTexts />
-
-    <div className="container-canvas">
-      <Canvas
+      <HeroTexts />
 
 
-        className="canvas-canvas"
+      {/* 3D EXPERIENCE */}
 
-        camera={{
-          position: isDesktop ? [22.3, 0.2, 15.7] : [ 8, 2, 15 ],
-          fov: isDesktop ? 45 : 90,
-        }}
+      <div className="container-canvas">
+
+        <Canvas
+          className="canvas-canvas"
+          camera={{
+            position: isDesktop
+              ? [22.3, 0.2, 15.7]
+              : [8, 2, 15],
+
+            fov: isDesktop
+              ? 45
+              : 90,
+          }}
+
           gl={{
-          toneMappingExposure: 0.7
-        }}
-      
-      >
-        <OrbitControls 
-          enableZoom={false}
-          enablePan={false}
-          target={[0,-2, 0]}
+            toneMappingExposure: 0.7
+          }}
+        >
 
-          minAzimuthAngle={THREE.MathUtils.degToRad(25)}
-          maxAzimuthAngle={THREE.MathUtils.degToRad(60)}
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
 
-          minPolarAngle={THREE.MathUtils.degToRad(45)}
-          maxPolarAngle={THREE.MathUtils.degToRad(90)}
+            target={[0, -2, 0]}
 
-          onStart={() => setHasInteracted(true)}
-        />
+            minAzimuthAngle={
+              THREE.MathUtils.degToRad(25)
+            }
 
-        <Experience 
-          onSelectFloor={setSelectedFloor}
-          selectedFloor={selectedFloor}
-          onSelectRoof= {setSelectedRoof}
-          selectedRoof={selectedRoof}
+            maxAzimuthAngle={
+              THREE.MathUtils.degToRad(60)
+            }
 
-          hasInteracted={hasInteracted}
-        />
+            minPolarAngle={
+              THREE.MathUtils.degToRad(45)
+            }
 
-      </Canvas>
+            maxPolarAngle={
+              THREE.MathUtils.degToRad(90)
+            }
 
-    </div>
+            onStart={() => setHasInteracted(true)}
+          />
+
+          <Experience
+            onSelectFloor={setSelectedFloor}
+            selectedFloor={selectedFloor}
+
+            onSelectRoof={setSelectedRoof}
+            selectedRoof={selectedRoof}
+
+            hasInteracted={hasInteracted}
+          />
+
+        </Canvas>
+
+      </div>
 
 
+      {/* MODALS */}
 
-    <FloorInfoModal
+      <FloorInfoModal
         floor={selectedFloor}
         onClose={() => setSelectedFloor(null)}
-    />
+      />
 
-    <RoofInfoModal 
-      floor={selectedRoof}
-      onClose= { () => setSelectedRoof(null)}
-    />
+      <RoofInfoModal
+        floor={selectedRoof}
+        onClose={() => setSelectedRoof(null)}
+      />
 
 
-    <Areas/>
-    <Location />
-    <Footer />
-    
+      {/* SECTIONS */}
+
+      <Areas />
+
+      <Location />
+
+      <Footer />
+
     </>
   )
 }

@@ -12,12 +12,13 @@ export default function FloorInfoModal({floor, onClose }) {
     // Esto es lo que hace que no se muestre el modal.
     if (floor === null) return null
 
+    //aca deberia enviar al useState que esta abierto el modal 
 
 
     const currentData = floorData[floor]
     // console.log(currentData)
      return (
-    
+        
 
         <div className="modal grid">
 
@@ -124,24 +125,8 @@ export default function FloorInfoModal({floor, onClose }) {
 
                 <div className="modal__button-cantainer">
                     <button className="modal__button-touch">GET IN TOUCH</button>
-                </div>
-            
+                </div>               
                 
-
-              
-             
-
-                {/* <div className="modal__body">
-                    <h1>{currentData.title}</h1>
-                    <h1>{currentData.title}</h1>
-                    <h1>{currentData.title}</h1>
-            
-                    <h1>{currentData.title}</h1>
-                    <h1>{currentData.title}</h1>
-                    <h1>{currentData.title}</h1>       
-                </div> */}
-
-
             </div>
         </div>
 
