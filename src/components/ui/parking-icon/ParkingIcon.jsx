@@ -1,0 +1,35 @@
+export default function ParkingIcon() {
+  return (
+    <svg
+      width="45"
+      height="45"
+      viewBox="0 0 45 45"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="45" height="45" rx="22.5" fill="#DEBFA0" />
+
+      <path
+        d="M22.5 32.5C22.5 32.5 30.5 26.5 30.5 20C30.5 15.858 26.9185 12.5 22.5 12.5C18.0815 12.5 14.5 15.858 14.5 20C14.5 26.5 22.5 32.5 22.5 32.5Z"
+        stroke="#784434"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+
+      <path
+        d="M21 17.5V25.5"
+        stroke="#784434"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+
+      <path
+        d="M21 17.5H24C24.5304 17.5 25.0391 17.7107 25.4142 18.0858C25.7893 18.4609 26 18.9696 26 19.5C26 20.0304 25.7893 20.5391 25.4142 20.9142C25.0391 21.2893 24.5304 21.5 24 21.5H21V17.5Z"
+        stroke="#784434"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}

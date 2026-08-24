@@ -1,0 +1,85 @@
+@use "../../../styles/abstracts/functions" as *;
+
+
+.navbar {
+    background-color: get-color(brand , dark);
+
+    &__header {
+        grid-column: 2 / 3;
+    }
+
+    &__main {
+        // background-color: red;
+        display: flex;        
+
+        align-items: center;
+        justify-content: space-between;
+        // background-color: get-color(brand , dark);
+        // background-color: rgb(8, 8, 143);
+        height: 80px;    
+        margin-top: 16px;   
+    }
+
+  
+    &__counter-right-links {
+        // background-color: darkcyan;
+        
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 612px;
+
+          @media(max-width: 904px) {
+            width: auto;
+        }
+       
+        
+    }
+
+    &__toggle {
+        // background-color: black;
+        
+        display: none;
+        height: 48px;
+        width: 48px;
+
+        cursor: pointer;
+
+        @media(max-width: 904px) {
+            display: block;
+        }
+    }
+
+    &__links-desktop {
+        // background-color: white;
+
+        display: flex;
+        gap: 72px;
+
+        color: white;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 200;
+
+        @media(max-width: 904px) {
+            display: none;
+        }
+    }
+
+    &__button--dark {
+        
+        height: 48px;
+
+        color: white;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 300;
+        border: 1px solid  #DEBFA0;
+        border-radius: 24px;
+        padding: 0 24px ;
+    }
+
+
+}
+

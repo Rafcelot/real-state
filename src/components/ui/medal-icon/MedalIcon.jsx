@@ -1,0 +1,28 @@
+
+import "./medal-icon.scss"
+
+export default function MedalIcon({ className }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 26 26"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.58628 14.8134C5.01387 13.2409 4.13049 11.1083 4.13049 8.88457C4.13049 6.66085 5.01387 4.5282 6.58628 2.95578C8.15869 1.38337 10.2913 0.5 12.5151 0.5C14.7388 0.5 16.8714 1.38337 18.4439 2.95578C20.0163 4.5282 20.8996 6.66085 20.8996 8.88457C20.8996 11.1083 20.0163 13.2409 18.4439 14.8134C16.8714 16.3858 14.7388 17.2691 12.5151 17.2691C10.2913 17.2691 8.15869 16.3858 6.58628 14.8134Z"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12.5151 17.2691L17.2664 25.5L19.4994 20.9821L24.5274 21.3063L19.7761 13.0768M5.25126 13.0768L0.5 21.3077L5.52795 20.9821L7.76104 25.4986L12.5123 17.2691"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}

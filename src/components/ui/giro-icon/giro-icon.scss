@@ -1,0 +1,14 @@
+.giro-icon {
+  width: 578px;
+  height: auto;
+
+    @media (max-width: 950px) {
+    width: 420px;
+     transform: translate(-20px, 45px);
+  }
+
+  @media (max-width: 750px) {
+    width: 260px;
+     transform: translate(-20px, 35px);
+  }
+}

@@ -1,0 +1,75 @@
+
+
+
+
+
+
+// COLORS MAP
+$colors: (
+
+  // Brand
+  brand: (
+    light: rgba(225, 233, 236, 1),
+    regular: rgba(86, 119, 132, 1),
+    dark: rgba(16, 20, 23, 1)
+  ),
+
+  // Emphasis / Accent
+  emphasis: (
+    light: rgba(243, 229, 250, 1),
+    regular: rgba(174, 60, 236, 1),
+    dark: rgba(59, 25, 76, 1)
+  ),
+
+  // Info
+  info: (
+    light: rgba(250, 246, 242),
+    regular: rgba(222, 191, 160),
+    dark: rgba(120, 68, 52)
+  ),
+
+  // Feedback
+  error: (
+    light: rgba(250, 229, 229, 1),
+    regular: rgba(145, 8, 8, 1),
+    dark: rgba(87, 5, 5, 1)
+  ),
+
+  warning: (
+    light: rgba(255, 237, 221, 1),
+    regular: rgba(203, 77, 26, 1),
+    dark: rgba(138, 48, 14, 1)
+  ),
+
+  success: (
+    light: rgba(220, 247, 212, 1),
+    regular: rgba(66, 122, 31, 1),
+    dark: rgba(35, 48, 3, 1)
+  ),
+
+  // Text
+  text: (
+    primary: rgba(45, 46, 47, 1),
+    secondary: rgba(107, 109, 111, 1),
+    inverse: #ffffff
+  ),
+
+  // Surface
+  surface: (
+    separate: rgba(247, 247, 247, 1),
+    subtle: rgba(240, 240, 240, 1),
+    strong: rgba(230, 230, 230, 1),
+    disabled: rgba(200, 201, 202, 1)
+  ),
+
+  // Border
+  border: (
+    subtle: rgba(200, 201, 202, 1)
+  ),
+
+  // Overlay
+  overlay: (
+    dark: rgba(0, 0, 0, 1)
+  )
+);
+

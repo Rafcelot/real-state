@@ -1,0 +1,47 @@
+
+
+@use "../abstracts/functions" as *;
+
+html,
+body,
+#root {
+  // width: 100%;
+  // height: 100%;
+  margin: 0;
+  padding: 0;
+  background: white;
+  // overflow: hidden
+}
+
+// Aplica un reset básico universal a todos los elementos y pseudoelementos
+*, *::before, *::after {
+  margin: 0;               // Elimina márgenes por defecto
+  padding: 0;              // Elimina relleno por defecto
+  box-sizing: border-box; // Incluye padding y border dentro del width/height
+}
+
+// Form elements – se heredan estilos para integrarse al diseño general
+button, input, textarea, select {
+  font: inherit;       // Usa la misma fuente que el texto normal
+  border: none;        // Elimina bordes por defecto
+  background: none;    // Elimina fondos nativos (útil en botones e inputs)
+  outline: none;       // Elimina el contorno azul por defecto al enfocar (⚠️ luego reemplazar con estilo accesible)
+}
+
+
+// Listas sin viñetas o numeración
+ul, ol {
+  
+    list-style: none;    // Elimina bullets y números
+    margin: 0;
+    padding: 0;
+   
+}
+
+
+// Links sin subrayado y con color heredado
+a {
+  text-decoration: none; // Elimina el subrayado por defecto
+  color: inherit;        // Hace que el color del link sea igual al del texto del contenedor
+  cursor: pointer;
+}

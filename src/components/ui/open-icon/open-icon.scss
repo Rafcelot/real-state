@@ -1,0 +1,10 @@
+
+
+.open-icon {
+     width: 40px;
+     height: auto;
+
+     @media(max-width: 750px) {
+        width: 30px;
+     }
+}

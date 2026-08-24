@@ -1,0 +1,27 @@
+export default function MallIcon(props) {
+  return (
+    <svg
+      viewBox="0 0 45 45"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <rect width="45" height="45" rx="22.5" fill="#DEBFA0" />
+
+      <path
+        d="M13.0264 16.5V31.4474C13.0264 31.7265 13.1373 31.9943 13.3347 32.1917C13.5321 32.3891 13.7998 32.5 14.079 32.5H30.9211C31.2003 32.5 31.468 32.3891 31.6654 32.1917C31.8628 31.9943 31.9737 31.7265 31.9737 31.4474V16.5H13.0264Z"
+        stroke="#784434"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+
+      <path
+        d="M31.9737 16.5L28.9911 12.5H16.009L13.0264 16.5M26.4764 19.9737C26.4764 22.1832 24.6964 23.9737 22.5001 23.9737C20.3037 23.9737 18.5232 22.1832 18.5232 19.9737"
+        stroke="#784434"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}

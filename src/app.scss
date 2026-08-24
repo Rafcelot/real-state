@@ -1,0 +1,40 @@
+
+@use "styles/abstracts/functions" as *;
+
+
+
+
+canvas {
+  
+
+  background: get-color(brand, dark);
+
+  
+  // background-color: darkcyan;
+  // width:  600px; 
+  height: 750px;
+  // width: 300px;
+
+  @media(max-width: 750px) {
+    height: 500px;
+   
+  }
+  
+
+}
+
+.container-canvas {
+  background: get-color(brand, dark);
+    display: grid;
+
+  @media (min-width: 904px) {
+    grid-template-columns: 1fr 1040px 1fr;
+  }
+  @media (max-width: 1042px) {
+      grid-template-columns: 32px minmax(0, 1fr) 32px;
+    }
+}
+
+.canvas-canvas {
+  grid-column: 2/3;
+}

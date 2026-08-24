@@ -1,0 +1,12 @@
+@use 'sass:map';
+@use './maps' as *;
+
+//LINEA PARA IMPORTAR 
+// @use '../../../styles/abstracts/functions' as *;
+
+// ESTO SE USA DENTRO DE OTRO ARCHIVO SCSS, EVITA QUE TENTER QUE ESCRIBIR EL DOBLE MAP.
+
+@function get-color($group, $variant) {
+  @return map.get(map.get($colors, $group), $variant);
+}
+ 

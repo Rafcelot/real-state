@@ -1,0 +1,41 @@
+@use '../../../styles/abstracts/functions' as *;
+
+
+.text {
+    &__main {
+        background-color: get-color(brand, dark);
+    }
+
+    &__container {
+        background-color: get-color(brand, dark);
+        grid-column: 2/3;
+        margin-top: 56px;
+        margin-left: 56px;
+    }
+
+    &__title {
+        // color: get-color(info, regular);
+        color: white;
+        font-size: 28px;
+        line-height: 36px;
+        letter-spacing: 1.4px;
+        font-weight: 700;
+    }
+
+    &__location {
+        color: white;
+        font-size: 10px;
+        line-height: 12px;
+        margin-top: 4px;
+        font-weight: 200;
+    }
+
+    &__price{
+        color: get-color(info, regular);
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 700;
+        margin-top: 8px;
+    }
+
+}
