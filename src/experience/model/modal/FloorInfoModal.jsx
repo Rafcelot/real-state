@@ -9,7 +9,7 @@ import CloseIcon from "../../../components/ui/x-icon/CloseIcon"
 
 export default function FloorInfoModal({floor, onClose }) {
     
-    // Esto es lo que hace que no se muestre el modal.
+    // Esto es lo que hace que no se muestre el modal si no hay floor seleccionado.
     if (floor === null) return null
 
     //aca deberia enviar al useState que esta abierto el modal 
@@ -126,7 +126,7 @@ export default function FloorInfoModal({floor, onClose }) {
                 <div className="modal__button-cantainer">
                     <button className="modal__button-touch">GET IN TOUCH</button>
                 </div>               
-                
+
             </div>
         </div>
 

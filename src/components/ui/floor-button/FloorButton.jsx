@@ -9,8 +9,7 @@ export default function FloorButton({ position, floor, onSelect }) {
         <Html position={position} center>
             {/* Esto envia la actualizacion a mi estado */}
             <button onClick={() => onSelect(floor)}>
-                <OpenIcon />
-                
+                <OpenIcon />                
             </button>
         </Html>
     )

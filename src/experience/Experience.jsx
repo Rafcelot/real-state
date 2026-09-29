@@ -11,7 +11,7 @@ import { Perf } from 'r3f-perf'
 
 import FloorButton from '../components/ui/floor-button/FloorButton'
 import RoodInfoModal from './model/modal-roof/RoofInfoModal'
-import Giro from '../components/ui/giro/giro'
+import Giro from "../components/ui/giro/Giro";
 
 
 export default function Experience({ onSelectFloor, selectedFloor, onSelectRoof, selectedRoof, hasInteracted }) {
