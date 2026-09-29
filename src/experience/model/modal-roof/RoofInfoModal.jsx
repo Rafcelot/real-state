@@ -61,7 +61,7 @@ export default  function RoofInfoModal ({ floor, onClose }) {
               
 
 
-                <div className="modal__button-cantainer">
+                <div className="modal__button-container">
                     <button className="modal__button-touch">GET IN TOUCH</button>
                 </div>
                 
